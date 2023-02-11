@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.solo.mapper.UserMapper">
+
+<select id="findAllUser" resultType="Solo">
+<![CDATA[
+	SELECT
+		id					AS 	"id"
+		,firstname			AS	"firstname"
+		,lastname			AS 	"lastname"
+	FROM tbuser
+	WHERE firstname ~* #{firstname} AND lastname ~* #{firstname}
+]]>
+</select>
+
+<select id="findUserById" resultType="Solo">
+<![CDATA[
+	SELECT
+		id					AS 	"id"
+		,firstname			AS	"firstname"
+		,lastname			AS 	"lastname"
+	FROM tbuser
+	WHERE id=#{id}
+]]>
+</select>
+
+<insert id="saveUser">
+<![CDATA[
+	INSERT INTO tbuser(
+		id
+		,firstname
+		,lastname
+	)
+	VALUES (
+		#{id}
+		,#{firstname}
+		,#{lastname}
+	)
+]]>
+</insert>
+
+<update id="updateUser">
+<![CDATA[
+	UPDATE tbuser 
+	SET
+		id				=	#{id}
+		,firstname		=	#{firstname}
+		,lastname		=	#{lastname}
+	WHERE id=#{id}
+]]>
+</update>
+
+<delete id="deleteUser">
+<![CDATA[
+	DELETE 
+		FROM tbuser
+	WHERE id=#{id}
+]]>
+</delete>
+
+</mapper>
