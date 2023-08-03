@@ -20,10 +20,13 @@ public class UserController {
 	public Solo findAllUser(@RequestBody Solo params) throws SException {
 		Solo result = new Solo();
 		SList list = userMapper.findAllUser(params);
+		Solo page = params.setPage(params, list.size());
 		if(!list.isEmpty()) {
-			result.set("list", list);			
+			result.set("list", list);
+			result.set("page", page);
 		}else {
-			result.set("list", "List not found !");			
+			result.set("list", "List not found !");
+			result.set("page", page);
 		}
 		return result;
 	}
