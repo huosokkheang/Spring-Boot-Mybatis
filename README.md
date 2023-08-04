@@ -2,7 +2,7 @@
 Doc: https://huosokkheang.github.io/Solo-Framework
 
 # findAll
-![image](https://user-images.githubusercontent.com/35053923/218248608-0ab54652-d33e-4549-8495-b23fc9f037e8.png)
+![Capture](https://github.com/huosokkheang/Mybatis-Solo/assets/35053923/47b36567-c676-45d3-ab31-ef9ccdfe8589)
 
 # findById
 ![image](https://user-images.githubusercontent.com/35053923/218248625-cec90142-950d-48c7-b922-06360c191fb6.png)
