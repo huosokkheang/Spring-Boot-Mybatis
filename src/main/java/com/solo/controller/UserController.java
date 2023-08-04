@@ -1,5 +1,6 @@
 package com.solo.controller;
 
+import com.core.util.validation.SValidatorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -15,12 +16,15 @@ public class UserController {
 	
 	@Autowired
 	private UserMapper userMapper;
-	
+
 	@SOP("USER01") //Find All
 	public Solo findAllUser(@RequestBody Solo params) throws SException {
+		SValidatorUtil.validate(params, "pageSize", "pageNumber", "pagesToShow");
 		Solo result = new Solo();
-		SList list = userMapper.findAllUser(params);
-		Solo page = params.setPage(params, list.size());
+		SList list = new SList();
+		list = userMapper.findAllUserPage(params);
+		int listSize = userMapper.findAllUser(params).size();
+		Solo page = params.setPage(params, listSize);
 		if(!list.isEmpty()) {
 			result.set("list", list);
 			result.set("page", page);

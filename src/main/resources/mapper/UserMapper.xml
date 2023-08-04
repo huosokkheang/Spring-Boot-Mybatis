@@ -13,6 +13,18 @@
 ]]>
 </select>
 
+<select id="findAllUserPage" resultType="Solo">
+    <![CDATA[
+        SELECT
+        id					AS 	"id"
+        ,firstname			AS	"firstname"
+        ,lastname			AS 	"lastname"
+        FROM tbuser
+        WHERE firstname ~* #{firstname} AND lastname ~* #{firstname}
+        LIMIT #{limit} OFFSET #{offset}
+    ]]>
+</select>
+
 <select id="findUserById" resultType="Solo">
 <![CDATA[
 	SELECT

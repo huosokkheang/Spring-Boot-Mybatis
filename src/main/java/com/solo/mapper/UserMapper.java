@@ -14,6 +14,10 @@ public class UserMapper extends MybatisSMC {
 	public SList findAllUser(Solo params) throws SException {
 		return selectList(NAMESPACE, "findAllUser", params);
 	}
+
+	public SList findAllUserPage(Solo params) throws SException {
+		return selectPage(NAMESPACE, "findAllUserPage", params);
+	}
 	
 	public Solo findUserById(Solo params) throws SException {
 		return selectOne(NAMESPACE, "findUserById", params);
