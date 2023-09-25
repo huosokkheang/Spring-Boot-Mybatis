@@ -8,7 +8,8 @@ Doc: https://huosokkheang.github.io/Solo-Framework
 ![image](https://user-images.githubusercontent.com/35053923/218248625-cec90142-950d-48c7-b922-06360c191fb6.png)
 
 # saveUser
-![image](https://user-images.githubusercontent.com/35053923/218248666-3d2653c3-f8e9-4bc2-a4bf-cb0213b2a71b.png)
+![Screenshot 2023-09-25 203049](https://github.com/huosokkheang/Spring-Boot-Mybatis/assets/35053923/3f802909-5193-4c24-9872-e32ffbf2ce8e)
+
 
 # updateUser
 ![image](https://user-images.githubusercontent.com/35053923/218248674-d7826d39-77cc-42c6-b236-9dd5595b97d0.png)
