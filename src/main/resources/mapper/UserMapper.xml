@@ -20,7 +20,7 @@
         ,firstname			AS	"firstname"
         ,lastname			AS 	"lastname"
         FROM tbuser
-        WHERE firstname ~* #{firstname} AND lastname ~* #{firstname}
+        WHERE firstname ~* #{firstname} AND lastname ~* #{firstname} ORDER BY id DESC
         LIMIT #{limit} OFFSET #{offset}
     ]]>
 </select>
@@ -39,13 +39,11 @@
 <insert id="saveUser">
 <![CDATA[
 	INSERT INTO tbuser(
-		id
-		,firstname
+		firstname
 		,lastname
 	)
 	VALUES (
-		#{id}
-		,#{firstname}
+		#{firstname}
 		,#{lastname}
 	)
 ]]>
@@ -55,8 +53,7 @@
 <![CDATA[
 	UPDATE tbuser 
 	SET
-		id				=	#{id}
-		,firstname		=	#{firstname}
+		firstname		=	#{firstname}
 		,lastname		=	#{lastname}
 	WHERE id=#{id}
 ]]>

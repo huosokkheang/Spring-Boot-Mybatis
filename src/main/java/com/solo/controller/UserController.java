@@ -19,6 +19,7 @@ public class UserController {
 
 	@SOP("USER01") //Find All
 	public Solo findAllUser(@RequestBody Solo params) throws SException {
+		SValidatorUtil.allowParameters(params, "firstname", "lastname", "pageSize", "pageNumber", "pagesToShow");
 		SValidatorUtil.validate(params, "pageSize", "pageNumber", "pagesToShow");
 		Solo result = new Solo();
 		SList list = new SList();
@@ -42,7 +43,7 @@ public class UserController {
 		try {
 			obj = userMapper.findUserById(params);
 		} catch (Exception e) {
-			throw new Exception("result not found !");
+			throw new Exception("user not found !");
 		}
 		result.set("result", obj);						
 		return obj;
@@ -53,7 +54,8 @@ public class UserController {
 		Solo result = new Solo();
 		long save = userMapper.saveUser(params);
 		if(save == 1) {
-			result.set("result", "Save Successfully !");						
+			result.set("result", "Save Successfully !");		
+			result.set("data", params);
 		}else {
 			result.set("result", "Save failed");						
 		}
@@ -63,9 +65,15 @@ public class UserController {
 	@SOP("USER04") //Update
 	public Solo updateUser(@RequestBody Solo params) throws SException {
 		Solo result = new Solo();
+		try {
+			Solo obj = userMapper.findUserById(params);
+		} catch (Exception e) {
+			throw new SException("User not found");
+		}
 		long update = userMapper.updateUser(params);
 		if(update == 1) {
-			result.set("result", "Update Successfully !");						
+			result.set("result", "Update Successfully !");
+			result.set("data", params);
 		}else {
 			result.set("result", "Update failed !");						
 		}
@@ -75,9 +83,15 @@ public class UserController {
 	@SOP("USER05") //Delete
 	public Solo deleteUser(@RequestBody Solo params) throws SException {
 		Solo result = new Solo();
+		try {
+			Solo obj = userMapper.findUserById(params);
+		} catch (Exception e) {
+			throw new SException("User not found");
+		}
 		long delete = userMapper.deleteUser(params);
 		if(delete == 1) {
-			result.set("result", "Delete Successfully !");						
+			result.set("result", "Delete Successfully !");		
+			result.set("data", params);
 		}else {
 			result.set("result", "Delete failed !");						
 		}
