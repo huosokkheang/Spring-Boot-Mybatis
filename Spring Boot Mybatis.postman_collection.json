@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "534530a3-5d45-4320-bf98-5bc5a1ba470e",
+		"name": "Spring Boot Mybatis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2619371",
+		"_collection_link": "https://lunar-crescent-123498.postman.co/workspace/My-Workspace~518c9eb0-e33a-4b74-8217-4146a6fb1620/collection/2619371-534530a3-5d45-4320-bf98-5bc5a1ba470e?action=share&source=collection_link&creator=2619371"
+	},
+	"item": [
+		{
+			"name": "List Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"\",\r\n    \"lastname\":\"\",\r\n    \"pageSize\":\"100\",\r\n    \"pageNumber\":\"1\",\r\n    \"pagesToShow\":\"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://194.233.79.158:8080/SpringBootMybatis/USER01",
+					"protocol": "http",
+					"host": [
+						"194",
+						"233",
+						"79",
+						"158"
+					],
+					"port": "8080",
+					"path": [
+						"SpringBootMybatis",
+						"USER01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUserById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 51\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://194.233.79.158:8080/SpringBootMybatis/USER02",
+					"protocol": "http",
+					"host": [
+						"194",
+						"233",
+						"79",
+						"158"
+					],
+					"port": "8080",
+					"path": [
+						"SpringBootMybatis",
+						"USER02"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Dara\",\r\n    \"lastname\":\"Sok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://194.233.79.158:8080/SpringBootMybatis/USER03",
+					"protocol": "http",
+					"host": [
+						"194",
+						"233",
+						"79",
+						"158"
+					],
+					"port": "8080",
+					"path": [
+						"SpringBootMybatis",
+						"USER03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 51,\r\n    \"firstname\": \"Dara\",\r\n    \"lastname\":\"Sok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://194.233.79.158:8080/SpringBootMybatis/USER04",
+					"protocol": "http",
+					"host": [
+						"194",
+						"233",
+						"79",
+						"158"
+					],
+					"port": "8080",
+					"path": [
+						"SpringBootMybatis",
+						"USER04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 52\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://194.233.79.158:8080/SpringBootMybatis/USER05",
+					"protocol": "http",
+					"host": [
+						"194",
+						"233",
+						"79",
+						"158"
+					],
+					"port": "8080",
+					"path": [
+						"SpringBootMybatis",
+						"USER05"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
